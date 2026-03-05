@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/pendingRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e9eaed"
+    android:padding="18dp">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:text="Log out"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        app:backgroundTint="#15314F"
+        app:cornerRadius="12dp"
+        app:icon="@android:drawable/ic_lock_power_off"
+        app:iconTint="@android:color/white"
+        app:iconPadding="6dp"
+        app:iconGravity="textStart" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:src="@drawable/jatra"
+        android:contentDescription="@string/app_logo"
+        android:scaleType="fitCenter" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_marginTop="26dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="14dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pending Access"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#111827"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="email@example.com"
+            android:textSize="14sp"
+            android:textColor="#374151"
+            android:layout_marginTop="8dp"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Waiting for approval..."
+            android:textSize="14sp"
+            android:textColor="#374151"
+            android:layout_marginTop="12dp"
+            android:gravity="center" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="14dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
