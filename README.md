@@ -83,15 +83,6 @@ In dense metropolitan cities like Dhaka, unpredictable road congestion and irreg
 
 ---
 
-## 🌐 Administration & Fleet Dashboard
-
-The Jatra Transit System connects to a central web management portal:
-
-| Component | Repository | Platform / Stack | Description |
-| :--- | :--- | :--- | :--- |
-| **Administration & Fleet Dashboard** | [mehadishameem/JatraAdminDashboard](https://github.com/mehadishameem/JatraAdminDashboard) | Web (Firebase & Leaflet.js) | EWU Transport Management System — central monitoring, route dispatch, and fleet administration |
-
----
 
 ## 🧠 Core Algorithms & Data Integrity
 
