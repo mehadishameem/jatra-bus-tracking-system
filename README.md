@@ -18,6 +18,8 @@
 - [System Roles & Core Features](#-system-roles--core-features)
   - [1. Driver-Side Telemetry Unit](#1-driver-side-telemetry-unit)
   - [2. Passenger-Side Transit Radar](#2-passenger-side-transit-radar)
+  - [3. Central Administration Dashboard (Web)](#3-central-administration-dashboard-web--leafletjs)
+- [🌐 Administration & Fleet Dashboard](#-administration--fleet-dashboard)
 - [Core Algorithms & Data Integrity](#-core-algorithms--data-integrity)
   - [3-Layer GPS Validation Algorithm (Driver)](#1-3-layer-gps-validation-algorithm-driver-side)
   - [Approaching-Bus Verification (Passenger)](#2-approaching-bus-verification-passenger-side)
@@ -71,6 +73,23 @@ In dense metropolitan cities like Dhaka, unpredictable road congestion and irreg
   - **Live Telemetry Dashboard**: Shows real-time speed in km/h, freshness timestamp of the last GPS ping, distance remaining, and connection health (Active / Inactive / Offline).
 - **Dynamic ETA (Estimated Arrival Time) & ETT (Estimated Travel Time)**: Live trip calculations based on actual vehicle speeds and remaining route geometry.
 - **Complete Fleet Directory (`ShowAllPrivateBus`)**: Searchable directory displaying all registered vehicles, active/inactive status badges (🟢 / 🔴), driver phone numbers, and one-tap turn-by-turn navigation via Google Maps.
+
+### 3. Central Administration Dashboard (Web / Leaflet.js)
+- **Repository**: [mehadishameem/JatraAdminDashboard](https://github.com/mehadishameem/JatraAdminDashboard)
+- **EWU Transport Management System**: A specialized real-time bus tracking and central administration dashboard built for East West University, powered by Firebase and Leaflet.js.
+- **Real-Time Fleet Surveillance**: Live browser-based geospatial tracking of all active campus and local buses on an interactive map.
+- **Route & Stoppage Management**: Administrative controls to create routes, adjust stoppage coordinates, update road order, and manage transit schedules.
+- **Driver & Bus Allocation**: Linking drivers, buses, and route assignments dynamically via Firebase.
+
+---
+
+## 🌐 Administration & Fleet Dashboard
+
+The Jatra Transit System connects to a central web management portal:
+
+| Component | Repository | Platform / Stack | Description |
+| :--- | :--- | :--- | :--- |
+| **Administration & Fleet Dashboard** | [mehadishameem/JatraAdminDashboard](https://github.com/mehadishameem/JatraAdminDashboard) | Web (Firebase & Leaflet.js) | EWU Transport Management System — central monitoring, route dispatch, and fleet administration |
 
 ---
 
@@ -154,9 +173,16 @@ flowchart TD
         P_Snap --> P_Radar --> P_List --> P_Map
     end
 
+    subgraph Admins["Central Web Administration Portal"]
+        A_Web["Jatra Admin Dashboard\n(Leaflet.js & Firebase)"]
+        A_Control["Fleet Surveillance &\nRoute/Driver Management"]
+        A_Web --> A_Control
+    end
+
     D_Service -->|Streams Verified Telemetry| FB_RTDB
     FB_Auth -.->|Authorizes| D_Service
     FB_RTDB -->|Real-Time Event Listeners| Commuters
+    FB_RTDB <-->|Real-Time Sync & CRUD| Admins
 ```
 
 ---
@@ -297,12 +323,12 @@ Follow these step-by-step instructions to set up, build, and run the project loc
 Clone the project repository to your local machine using Git:
 
 ```bash
-git clone https://github.com/enamulhasan248/Jatra-A-Smart-City-Bus-Tracking-Navigation-System.git
+git clone https://github.com/mehadishameem/jatra-bus-tracking-system.git
 ```
 
 Navigate into the cloned directory:
 ```bash
-cd Jatra-A-Smart-City-Bus-Tracking-Navigation-System
+cd jatra-bus-tracking-system
 ```
 *(Note: If opening the project from this repository directory directly, the root Android project is located under `CapstoneBus/`)*.
 
@@ -400,8 +426,8 @@ The app declares the following permissions in `AndroidManifest.xml`:
 
 This project was developed as an Undergraduate Capstone Project by four Computer Science and Engineering students from **East West University (EWU)**, Dhaka, Bangladesh:
 
-1. **Mehadi Hasan Shameem**
-2. **Enamul Hasan** — [GitHub](https://github.com/enamulhasan248) • [Email](mailto:enamulhasan248@gmail.com)
+1. **Mehadi Hasan Shameem** — [GitHub](https://github.com/mehadishameem) • [Jatra Admin Dashboard](https://github.com/mehadishameem/JatraAdminDashboard)
+2. **Enamul Hasan** 
 3. **Tanjim Khandoker**
 4. **Chinmoy Karmakar**
 
