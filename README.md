@@ -10,6 +10,10 @@
 
 **Jatra** (*"যাত্রা"* meaning *Journey* in Bengali) is an intelligent, real-time public and private transit tracking and navigation ecosystem engineered to modernize urban public transit in Dhaka, Bangladesh. Developed as a Computer Science & Engineering Capstone Project at **East West University (EWU)**, Jatra unifies the **Driver-Side Telemetry Unit** and the **Passenger-Side Transit Radar** into an integrated, end-to-end smart transit platform.
 
+**Thesis :** (PDF): https://drive.google.com/file/d/1edzSuoRRYxVRaef4KFQEE6bFAEQ6YpWH/view?usp=sharing
+
+Summary: [2-3 lines about what Jatra does and the tech stack]
+
 ---
 
 ## 📌 Table of Contents
